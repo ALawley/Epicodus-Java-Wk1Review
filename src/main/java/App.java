@@ -24,7 +24,9 @@ public class App {
       String userInput = request.queryParams("puzzle-form");
       request.session().attribute("solution", userInput);
       String wordPuzzle = puzzleBuild(userInput);
+      Boolean isCheater = isCheater(userInput);
 
+      model.put("isCheater", isCheater);
       model.put("userPuzzle", wordPuzzle);
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -45,6 +47,12 @@ public class App {
 
   public static String puzzleBuild(String inputText) {
     return inputText.replaceAll("[aeiouAEIOU]", "-");
+  }
+
+  public static Boolean isCheater(String inputText) {
+    if (inputText.contains("-")) {
+      return true;
+    } return false;
   }
 
   public static Boolean puzzleEvaluate(String puzzle, String userGuess) {

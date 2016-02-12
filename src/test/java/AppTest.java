@@ -49,4 +49,10 @@ public class AppTest {
     String solution = "Hello how are you my name is Anna";
     assertEquals(true, testPuzzle.puzzleEvaluate(solution, userInput));
   }
+  @Test
+  public void isCheater_checksIfInputContainsDashes_true() {
+    App testPuzzle = new App();
+    String userInput = "Hello, how a-e you?";
+    assertEquals(true, testPuzzle.isCheater(userInput));
+  }
 }

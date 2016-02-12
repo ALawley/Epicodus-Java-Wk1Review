@@ -1,5 +1,8 @@
 <h1>Word Puzzle Builder</h1>
-<p>Try to guess solve the puzzle below. Every blank should be a vowel.</p>
+#if($isCheater)<h3>Putting dashes ("-") in your puzzle isn't very fair. Try again without cheating.</h3>
+<a href="/"><button type="button" class="btn btn-primary">Play Again</button></a>
+
+#else<p>Try to guess solve the puzzle below. Every blank should be a vowel.</p>
 <h3>$userPuzzle</h3>
 
 <form action='/result' method='get'>
@@ -11,3 +14,4 @@
   <button type="submit" class="btn btn-primary">Submit</button>
   <a href="/"><button type="button" class="btn btn-primary">I give up</button></a>
 </form>
+#end
