@@ -4,7 +4,8 @@ import static org.junit.Assert.*;
 public class AppTest {
 
   @Test
-  public void method_input_result() {
-    // eventually put your testing code here
+  public void puzzleBuild_enterAStringAndReceiveItBackWithVowelsAsDashes() {
+    App testPuzzle = new App();
+    assertEquals("h-ll-", testPuzzle.puzzleBuild("hello"));
   }
 }

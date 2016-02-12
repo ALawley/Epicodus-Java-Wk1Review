@@ -7,5 +7,9 @@ import static spark.Spark.*;
 public class App {
   public static void main(String[] args) {}
 
+  public static String puzzleBuild(String inputText) {
+    String outputText = inputText.replaceAll("[aeiou]", "-");
+    return outputText;
+  }
 
 }
