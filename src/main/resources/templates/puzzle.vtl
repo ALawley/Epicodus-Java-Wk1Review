@@ -1,9 +1,12 @@
-<h1>Word Puzzle Builder</h1>
-#if($isCheater)<h3>Putting dashes ("-") in your puzzle isn't very fair. Try again without cheating.</h3>
+<div class="jumbotron">
+  <h1>Word Puzzle Builder</h1>
+  #if($isCheater)<h3>Putting dashes ("-") in your puzzle isn't very fair. Try again without cheating.</h3>
+</div>
 <a href="/"><button type="button" class="btn btn-primary back">Play Again</button></a>
 
-#else<p>Try to guess solve the puzzle below. Every blank should be a vowel.</p>
-<h3>$userPuzzle</h3>
+  #else<p>Try to guess solve the puzzle below. Every blank should be a vowel.</p>
+</div>
+<h1 class="puzzle">$userPuzzle</h1>
 
 <form action='/result' method='get'>
   <div class="form-group">
