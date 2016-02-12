@@ -35,4 +35,18 @@ public class AppTest {
     String solution = "Hello how are you my name is Anna";
     assertEquals(true, testPuzzle.puzzleEvaluate(solution, userInput));
   }
+  @Test
+  public void puzzleEvaluate_ignoreCapitalization_true() {
+    App testPuzzle = new App();
+    String userInput = "Hello how are you my name is Anna";
+    String solution = "hello how are you my name is anna";
+    assertEquals(true, testPuzzle.puzzleEvaluate(solution, userInput));
+  }
+  @Test
+  public void puzzleEvaluate_ignorePunctuation_true() {
+    App testPuzzle = new App();
+    String userInput = "Hello, how are you? my name is Anna.";
+    String solution = "Hello how are you my name is Anna";
+    assertEquals(true, testPuzzle.puzzleEvaluate(solution, userInput));
+  }
 }

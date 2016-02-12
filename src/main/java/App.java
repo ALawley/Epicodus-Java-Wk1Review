@@ -1,5 +1,6 @@
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Arrays;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
@@ -11,6 +12,7 @@ public class App {
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("solution", request.session().attribute("solution"));
+      request.session().attribute("solution", "");
       model.put("template", "templates/home.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -46,7 +48,13 @@ public class App {
   }
 
   public static Boolean puzzleEvaluate(String puzzle, String userGuess) {
-    if (puzzle.equals(userGuess)) {
+    puzzle = puzzle.toLowerCase();
+    puzzle = puzzle.replaceAll("[^\\dA-Za-z ]", "");
+    userGuess = userGuess.replaceAll("[^\\dA-Za-z ]", "");
+    userGuess = userGuess.toLowerCase();
+    char[] puzzleChars = puzzle.toCharArray();
+    char[] guessChars = userGuess.toCharArray();
+    if (Arrays.equals(puzzleChars, guessChars)) {
       return true;
     } return false;
   }
