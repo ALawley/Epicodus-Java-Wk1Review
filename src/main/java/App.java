@@ -31,6 +31,17 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/hint", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/hint.vtl");
+
+      String solution = request.session().attribute("solution");
+      String wordPuzzle = hintPuzzleBuild(solution);
+
+      model.put("userPuzzle", wordPuzzle);
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
     get("/result", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/result.vtl");
@@ -47,6 +58,10 @@ public class App {
 
   public static String puzzleBuild(String inputText) {
     return inputText.replaceAll("[aeiouAEIOU]", "-");
+  }
+
+  public static String hintPuzzleBuild(String inputText) {
+    return inputText.replaceAll("[eiouEIOU]", "-");
   }
 
   public static Boolean isCheater(String inputText) {

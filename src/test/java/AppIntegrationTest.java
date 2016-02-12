@@ -25,8 +25,7 @@ public class AppIntegrationTest extends FluentTest {
     fill("#puzzle-form").with("What is your favorite food?");
     submit(".btn");
     assertThat(pageSource()).contains("Wh-t -s y--r f-v-r-t- f--d?");
-  }
-  @Test
+  }@Test
   public void rightAnswerTest() {
     goTo("http://localhost:4567/");
     fill("#puzzle-form").with("What is your name?");

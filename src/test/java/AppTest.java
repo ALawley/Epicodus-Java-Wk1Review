@@ -29,6 +29,11 @@ public class AppTest {
     assertEquals("h-ll- h-w -r- y-- my n-m- -s -nn-", testPuzzle.puzzleBuild("hello how are you my name is Anna"));
   }
   @Test
+  public void hintPuzzleBuild_hideNonAVowels() {
+    App testPuzzle = new App();
+    assertEquals("h-ll- h-w ar- y-- my nam- -s Anna", testPuzzle.hintPuzzleBuild("hello how are you my name is Anna"));
+  }
+  @Test
   public void puzzleEvaluate_evaluateIfSolutionMatchesPuzzle_true() {
     App testPuzzle = new App();
     String userInput = "Hello how are you my name is Anna";
