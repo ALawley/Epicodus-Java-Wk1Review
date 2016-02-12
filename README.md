@@ -11,8 +11,8 @@ _This page will let a user enter a secret phrase in to be turned into a puzzle. 
 ## Setup/Installation Requirements
 
 * _Clone this repository_
-* _Make sure you have the [Java SDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [Java SRE](http://www.java.com/en/) installed._
-* _[Make sure that gradle is installed](http://codetutr.com/2013/03/23/how-to-install-gradle/)_
+* _Install the [Java SDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [Java SRE](http://www.java.com/en/)._
+* _[Install gradle](http://codetutr.com/2013/03/23/how-to-install-gradle/)_
 * _Open a terminal, navigate to the root of the cloned directory, and enter "gradle run"._
 * _Open localhost:4567 in a browser._
 
