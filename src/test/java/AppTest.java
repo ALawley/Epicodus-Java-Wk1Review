@@ -19,8 +19,13 @@ public class AppTest {
     assertEquals("h-ll-, h-w -r- y--? my n-m- -s -nn-.", testPuzzle.puzzleBuild("hello, how are you? my name is anna."));
   }
   @Test
-  public void puzzleBuild_preserveCapitalization() {
+  public void puzzleBuild_preserveConsonantCapitalization() {
     App testPuzzle = new App();
-    assertEquals("H-ll- h-w -r- y-- my n-m- -s -nn-", testPuzzle.puzzleBuild("Hello how are you my name is Anna"));
+    assertEquals("H-ll- h-w -r- y-- my n-m- -s -nn-", testPuzzle.puzzleBuild("Hello how are you my name is anna"));
+  }
+  @Test
+  public void puzzleBuild_replaceCapitalizedVowels() {
+    App testPuzzle = new App();
+    assertEquals("h-ll- h-w -r- y-- my n-m- -s -nn-", testPuzzle.puzzleBuild("hello how are you my name is Anna"));
   }
 }
