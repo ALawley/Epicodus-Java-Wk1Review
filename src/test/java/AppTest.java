@@ -28,4 +28,11 @@ public class AppTest {
     App testPuzzle = new App();
     assertEquals("h-ll- h-w -r- y-- my n-m- -s -nn-", testPuzzle.puzzleBuild("hello how are you my name is Anna"));
   }
+  @Test
+  public void puzzleEvaluate_evaluateIfSolutionMatchesPuzzle_true() {
+    App testPuzzle = new App();
+    String userInput = "Hello how are you my name is Anna";
+    String solution = "Hello how are you my name is Anna";
+    assertEquals(true, testPuzzle.puzzleEvaluate(solution, userInput));
+  }
 }

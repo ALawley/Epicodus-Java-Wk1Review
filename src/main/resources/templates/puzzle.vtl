@@ -1,3 +1,12 @@
 <h1>Word Puzzle Builder</h1>
 <p>Try to guess solve the puzzle below. Every blank should be a vowel.</p>
 <h3>$userPuzzle</h3>
+
+<form action='/result' method='get'>
+  <div class="form-group">
+    <label for="solution-form">Enter your solution here:</label>
+    <input id="solution-form" name="solution-form" class="form-control" type="text">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
